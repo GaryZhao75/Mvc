@@ -60,7 +60,7 @@ namespace Microsoft.AspNetCore.Mvc.Formatters
                 throw new ArgumentOutOfRangeException(nameof(length));
             }
 
-            if (offset > mediaType.Length - length)
+            if (length != null && (offset > mediaType.Length - length))
             {
                 throw new ArgumentException(Resources.FormatArgument_InvalidOffsetLength(nameof(offset), nameof(length)));
             }
